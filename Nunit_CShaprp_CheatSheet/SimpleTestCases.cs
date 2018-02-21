@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+using System.Globalization;
 using NUnit.Framework;
 
 namespace Nunit_CShaprp_CheatSheet
@@ -11,15 +10,15 @@ namespace Nunit_CShaprp_CheatSheet
     [TestFixture, Category("SimpleTests")]
     public class SimpleTestCases
     {
-        readonly string _runID;
-        public static bool previousTestExecutionPassed = true;
+        readonly string _runId;
+        public static bool PreviousTestExecutionPassed = true;
         /// <summary>
         /// Constructor in a test class can be used to initialize ReadOnly variables
         /// These variable could be server details or data like time stamp
         /// </summary>
         public SimpleTestCases()
         {
-            _runID = DateTime.Now.ToString();
+            _runId = DateTime.Now.ToString(CultureInfo.InvariantCulture);
         }
 
         #region Setup Methods
@@ -30,6 +29,7 @@ namespace Nunit_CShaprp_CheatSheet
         [TestFixtureSetUp]
         public void TestClassFixture()
         {
+            Console.WriteLine("Unique Run ID is: " +_runId);
             //We can have in this section code performing actions like 
             //Read configuration settings
             //Login into application
@@ -120,7 +120,7 @@ namespace Nunit_CShaprp_CheatSheet
         }
 
         [Test, Category("ModuleName")]
-        public void Category_Test()
+        public void Single_Category_Test()
         {
             //Used to categorise or group your test cases
             //Via nunit UI or Nunit console window you can execute tests using the category attribute value
@@ -134,7 +134,7 @@ namespace Nunit_CShaprp_CheatSheet
         }
 
         [Test, Category("Module Name Category"), Category("SmokeTestCategory")]
-        public void Category_Test()
+        public void Multiple_Category_Test()
         {
             //A test case can have multiple categories
             //Category attributed when used on test calss, groups all test methods under it to same categoryf
@@ -162,9 +162,10 @@ namespace Nunit_CShaprp_CheatSheet
         [TearDown]
         public void TestTearDown()
         {
+            PreviousTestExecutionPassed = true;
             //Stop Timers and record test case execution time
             //Clean up activities required after every test execution
-            //update test execution result to JIRA/ALM or dashboard
+            //update test execution result to Pass/Fail
             //Check if test execution is pass or fail and set flag value to False (previousTestExecutionPassed)
         }
 
