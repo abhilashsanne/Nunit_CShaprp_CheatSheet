@@ -4,6 +4,10 @@ using NUnit.Framework;
 
 namespace Nunit_CShaprp_CheatSheet
 {
+    /// <summary>
+    /// This test class contains example tests utilizing C# custom attributes for Nunit tests
+    /// </summary>
+    [TestFixture]
     public class CustomPropertyTests
     {
         private string _testCaseName;
