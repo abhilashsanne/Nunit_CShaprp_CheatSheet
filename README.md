@@ -3,4 +3,10 @@ This Project aims to provide a quick working code reference guide C# Nunit Autom
 
 It has collection of most important attributes and assertions in Nunit along with comments on usage and best practices.
 
-Hope it save you the trouble of having to browse through various links in Google or go through the whole Nunit documentation.
+Hope it saves you the trouble of having to browse through various links in Google or go through the whole Nunit documentation.
+
+Prerequisites:
+-	Visual Studio 2012 or later versions installed
+-	Nunit VS adapter installed
+-	Knowledge on Unit Testing and Test Methods
+-	Basic familiarity with Nunit
