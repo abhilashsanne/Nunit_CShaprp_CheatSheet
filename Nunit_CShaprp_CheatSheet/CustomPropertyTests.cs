@@ -25,7 +25,7 @@ namespace Nunit_CShaprp_CheatSheet
             ReadingTestCaseAttributes();
         }
 
-        [Test,Category("CustomAttributeTest"), CustomPropertyAttribute(CustomPropertyValue.One), Description("Custom Attribute Testing")]
+        [Test, Category("CustomAttributeTest"), CustomPropertyAttribute(CustomPropertyValue.One), Description("Custom Attribute Testing")]
         public void CustomPropertyAttributeTest()
         {
             //Custom Property: categorises the test within the test output XML.
@@ -72,7 +72,7 @@ namespace Nunit_CShaprp_CheatSheet
             _testCustomAttributeValue = TestContext.CurrentContext.Test.Properties["Custom"] == null
                 ? ""
                 : TestContext.CurrentContext.Test.Properties["Custom"].ToString();
-            ArrayList temp = (ArrayList) TestContext.CurrentContext.Test.Properties["_CATEGORIES"];
+            ArrayList temp = (ArrayList)TestContext.CurrentContext.Test.Properties["_CATEGORIES"];
             _testCategory = temp[0].ToString();
         }
 

@@ -36,7 +36,7 @@ namespace Nunit_CShaprp_CheatSheet
 
             Assert.IsEmpty(new List<object>());
             Assert.IsEmpty(new List<object>());
-            Assert.IsNotEmpty(new List<object> {1});
+            Assert.IsNotEmpty(new List<object> { 1 });
             Assert.IsNotEmpty("MyTestString");
 
             #endregion
@@ -110,7 +110,7 @@ namespace Nunit_CShaprp_CheatSheet
             StringAssert.AreEqualIgnoringCase("DOG", "dog");
             StringAssert.IsMatch("[10-29]", "15");
 
-            Assert.Contains(string.Empty, new List<object> {string.Empty},
+            Assert.Contains(string.Empty, new List<object> { string.Empty },
                 "Assert.Contains is used to test whether an object is contained in a collection.");
 
             #endregion
@@ -125,25 +125,25 @@ namespace Nunit_CShaprp_CheatSheet
             //AreEquivalent tests whether the collection contents are equal, but without regard to order.
             //In both cases, elements are compared using NUnit's default equality comparison.
 
-            CollectionAssert.AllItemsAreInstancesOfType(new List<decimal> {0m}, typeof(decimal));
-            CollectionAssert.AllItemsAreNotNull(new List<decimal> {0m});
-            CollectionAssert.AllItemsAreUnique(new List<decimal> {0m, 1m});
-            CollectionAssert.AreEqual(new List<decimal> {0m}, new List<decimal> {0m});
-            CollectionAssert.AreEquivalent(new List<decimal> {0m, 1m},
-                new List<decimal> {1m, 0m}); // Same as AreEqual though order does not mater
-            CollectionAssert.AreNotEqual(new List<decimal> {0m}, new List<decimal> {1m});
-            CollectionAssert.AreNotEquivalent(new List<decimal> {0m, 1m},
-                new List<decimal> {1m, 2m}); // Same as AreNotEqual though order does not matter
-            CollectionAssert.Contains(new List<decimal> {0m, 1m}, 1m);
-            CollectionAssert.DoesNotContain(new List<decimal> {0m, 1m}, 2m);
-            CollectionAssert.IsSubsetOf(new List<decimal> {1m},
-                new List<decimal> {0m, 1m}); // {1} is considered a SubSet of {1,2}
-            CollectionAssert.IsNotSubsetOf(new List<decimal> {1m, 2m}, new List<decimal> {0m, 1m});
+            CollectionAssert.AllItemsAreInstancesOfType(new List<decimal> { 0m }, typeof(decimal));
+            CollectionAssert.AllItemsAreNotNull(new List<decimal> { 0m });
+            CollectionAssert.AllItemsAreUnique(new List<decimal> { 0m, 1m });
+            CollectionAssert.AreEqual(new List<decimal> { 0m }, new List<decimal> { 0m });
+            CollectionAssert.AreEquivalent(new List<decimal> { 0m, 1m },
+                new List<decimal> { 1m, 0m }); // Same as AreEqual though order does not mater
+            CollectionAssert.AreNotEqual(new List<decimal> { 0m }, new List<decimal> { 1m });
+            CollectionAssert.AreNotEquivalent(new List<decimal> { 0m, 1m },
+                new List<decimal> { 1m, 2m }); // Same as AreNotEqual though order does not matter
+            CollectionAssert.Contains(new List<decimal> { 0m, 1m }, 1m);
+            CollectionAssert.DoesNotContain(new List<decimal> { 0m, 1m }, 2m);
+            CollectionAssert.IsSubsetOf(new List<decimal> { 1m },
+                new List<decimal> { 0m, 1m }); // {1} is considered a SubSet of {1,2}
+            CollectionAssert.IsNotSubsetOf(new List<decimal> { 1m, 2m }, new List<decimal> { 0m, 1m });
             CollectionAssert.IsEmpty(new List<decimal>());
-            CollectionAssert.IsNotEmpty(new List<decimal> {1m});
-            CollectionAssert.IsOrdered(new List<decimal> {1m, 2m, 3m});
-            CollectionAssert.IsOrdered(new List<string> {"a", "A", "b"}, StringComparer.CurrentCultureIgnoreCase);
-            CollectionAssert.IsOrdered(new List<int> {3, 2, 1},
+            CollectionAssert.IsNotEmpty(new List<decimal> { 1m });
+            CollectionAssert.IsOrdered(new List<decimal> { 1m, 2m, 3m });
+            CollectionAssert.IsOrdered(new List<string> { "a", "A", "b" }, StringComparer.CurrentCultureIgnoreCase);
+            CollectionAssert.IsOrdered(new List<int> { 3, 2, 1 },
                 "The list is ordered"); // Only supports ICompare and not ICompare<T> as of version 2.6
 
             #endregion
@@ -163,22 +163,6 @@ namespace Nunit_CShaprp_CheatSheet
 
             FileAssert.Equals(new FileInfo("MyFile.txt"), new FileInfo("MyFile.txt"));
             FileAssert.ReferenceEquals(new FileInfo("MyFile.txt"), new FileInfo("MyFile.txt"));
-
-            #endregion
-
-            #region Directory Asserts
-
-            DirectoryInfo expected = new DirectoryInfo(@"C:\");
-            DirectoryInfo actual = new DirectoryInfo(@"C:\Test");
-
-            DirectoryAssert.AreEqual(expected, actual);
-            DirectoryAssert.AreEqual(expected, actual);
-
-            DirectoryAssert.AreNotEqual(expected, actual);
-            DirectoryAssert.AreNotEqual(expected, actual);
-
-            DirectoryAssert.IsWithin(expected, actual);
-            DirectoryAssert.IsNotWithin(expected, actual);
 
             #endregion
 
@@ -227,7 +211,7 @@ namespace Nunit_CShaprp_CheatSheet
             Assert.That("Foo!", Is.EqualTo("Foo!"));
             Assert.That("Foo!", Is.Not.EqualTo("FOO!"));
             Assert.That("Foo!", Is.EqualTo("FOO!").IgnoreCase);
-            Assert.That(new List<string> {"FOO!"}, Is.EqualTo(new List<string> {"Foo!"}).IgnoreCase);
+            Assert.That(new List<string> { "FOO!" }, Is.EqualTo(new List<string> { "Foo!" }).IgnoreCase);
 
             // Date, Time and TimeSpan equality
             Assert.That(DateTime.Today, Is.EqualTo(DateTime.Today));
@@ -241,10 +225,10 @@ namespace Nunit_CShaprp_CheatSheet
             Assert.That(DateTime.Now, Is.EqualTo(DateTime.Now).Within(1).Milliseconds);
 
             // Collection equality
-            Assert.That(new[] {1.0, 2.0, 3.0}, Is.EqualTo(new[] {1, 2, 3}));
-            Assert.That(new[] {1.0, 2.0, 3.0}, Is.Not.EqualTo(new[] {1, 2, 3, 4}));
-            Assert.That(new[] {1.0, 2.0, 3.0, 4.0},
-                Is.EqualTo(new[,] {{1, 2}, {3, 4}})
+            Assert.That(new[] { 1.0, 2.0, 3.0 }, Is.EqualTo(new[] { 1, 2, 3 }));
+            Assert.That(new[] { 1.0, 2.0, 3.0 }, Is.Not.EqualTo(new[] { 1, 2, 3, 4 }));
+            Assert.That(new[] { 1.0, 2.0, 3.0, 4.0 },
+                Is.EqualTo(new[,] { { 1, 2 }, { 3, 4 } })
                     .AsCollection); // Compare data and not collection (flattens a collection of collections)
 
             // Customer Comparer
@@ -261,7 +245,7 @@ namespace Nunit_CShaprp_CheatSheet
             Assert.That(double.NaN, Is.NaN);
             Assert.That(string.Empty, Is.Empty);
             Assert.That(new List<int>(), Is.Empty);
-            Assert.That(new List<int> {1, 2, 3}, Is.Unique);
+            Assert.That(new List<int> { 1, 2, 3 }, Is.Unique);
 
             // Comparision
             Assert.That(1, Is.LessThan(2));
@@ -299,16 +283,16 @@ namespace Nunit_CShaprp_CheatSheet
             Assert.That("Foo", Is.StringMatching("^[F]")); // Regular ecpression match
 
             // Collection Comparison
-            Assert.That(new List<int> {1, 2, 3}, Has.All.GreaterThan(0));
-            Assert.That(new List<int> {1, 2, 3}, Is.All.GreaterThan(0));
-            Assert.That(new List<int> {1, 2, 3}, Has.None.GreaterThan(4));
-            Assert.That(new List<int> {1, 2, 3}, Has.Some.GreaterThan(2));
-            Assert.That(new List<int> {1, 2, 3}, Has.Count.EqualTo(3));
-            Assert.That(new List<int> {1, 2, 3}, Is.Unique);
-            Assert.That(new List<int> {1, 2, 3}, Has.Member(1)); // Contains
-            Assert.That(new List<int> {1, 2, 3},
-                Is.EquivalentTo(new List<int> {3, 2, 1})); // Same data without carring about the order
-            Assert.That(new List<int> {1, 2,}, Is.SubsetOf(new List<int> {3, 2, 1})); // All are cotained.
+            Assert.That(new List<int> { 1, 2, 3 }, Has.All.GreaterThan(0));
+            Assert.That(new List<int> { 1, 2, 3 }, Is.All.GreaterThan(0));
+            Assert.That(new List<int> { 1, 2, 3 }, Has.None.GreaterThan(4));
+            Assert.That(new List<int> { 1, 2, 3 }, Has.Some.GreaterThan(2));
+            Assert.That(new List<int> { 1, 2, 3 }, Has.Count.EqualTo(3));
+            Assert.That(new List<int> { 1, 2, 3 }, Is.Unique);
+            Assert.That(new List<int> { 1, 2, 3 }, Has.Member(1)); // Contains
+            Assert.That(new List<int> { 1, 2, 3 },
+                Is.EquivalentTo(new List<int> { 3, 2, 1 })); // Same data without carring about the order
+            Assert.That(new List<int> { 1, 2, }, Is.SubsetOf(new List<int> { 3, 2, 1 })); // All are cotained.
 
             // Property Constraint
             Assert.That(new List<int>(), Has.Property("Count").EqualTo(0)); // Checks public property
@@ -325,10 +309,10 @@ namespace Nunit_CShaprp_CheatSheet
             Assert.That(() => new ArgumentException("Foo"),
                 Throws.Exception.InstanceOf<ArgumentException>().And.Message.EqualTo("Foo"));
 
-            Assert.That(() => new ArgumentNullException("Foo"),
+            Assert.That(() => new ArgumentNullException(null),
                 Throws.Exception.TypeOf<ArgumentNullException>());
 
-            Assert.That(() => new ArgumentNullException("Foo"),
+            Assert.That(() => new ArgumentNullException(null),
                 Throws.InstanceOf<ArgumentNullException>());
 
             Assert.That(() => { }, Throws.Nothing);
@@ -340,7 +324,7 @@ namespace Nunit_CShaprp_CheatSheet
 
             // Compound Constraints
             Assert.That(2, Is.Not.EqualTo(1));
-            Assert.That(new List<int> {1, 2, 3}, Is.All.GreaterThan(0));
+            Assert.That(new List<int> { 1, 2, 3 }, Is.All.GreaterThan(0));
 
             Assert.That(1, Is.GreaterThan(0).And.LessThan(2)); // .And amd & are the same
             Assert.That(1, Is.GreaterThan(0) & Is.LessThan(2));
@@ -354,9 +338,9 @@ namespace Nunit_CShaprp_CheatSheet
 
             // List Mapper
             Assert.That(
-                List.Map(new List<string> {"1", "22", "333"})
+                List.Map(new List<string> { "1", "22", "333" })
                     .Property("Length"), // Allows all elememts in a list to have a condition provided for them
-                Is.EqualTo(new List<int> {1, 2, 3}));
+                Is.EqualTo(new List<int> { 1, 2, 3 }));
         }
     }
 }
