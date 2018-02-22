@@ -21,7 +21,7 @@ namespace Nunit_CShaprp_CheatSheet
         [SetUp]
         public void SetupMethodForEveryTest()
         {
-            //Read and store current test case details
+            //Read and store current test case details from the test case attributes
             ReadingTestCaseAttributes();
         }
 
@@ -36,8 +36,6 @@ namespace Nunit_CShaprp_CheatSheet
 
 
         #region Custom Attribute
-
-        #endregion
 
         /// <summary>
         /// This custom property can be project specific like Priority, Severity, Role, Country
@@ -77,5 +75,8 @@ namespace Nunit_CShaprp_CheatSheet
             ArrayList temp = (ArrayList) TestContext.CurrentContext.Test.Properties["_CATEGORIES"];
             _testCategory = temp[0].ToString();
         }
+
+        #endregion
+
     }
 }

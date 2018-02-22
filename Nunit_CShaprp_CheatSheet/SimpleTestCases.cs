@@ -152,6 +152,11 @@ namespace Nunit_CShaprp_CheatSheet
             //Refer CustomPropertyAttributeTest for generating custom attributes matching your project requirements
         }
 
+        [Test, Property("Severity", "2"), Property("Severity", "3")]
+        public void PropertyAttributeTest_Severity()
+        {
+            //Another example for understanding property attribute
+        }
         #endregion    
 
         #region TearDown Methods
