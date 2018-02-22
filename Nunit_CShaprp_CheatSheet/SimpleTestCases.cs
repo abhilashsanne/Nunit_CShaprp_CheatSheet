@@ -29,7 +29,7 @@ namespace Nunit_CShaprp_CheatSheet
         [TestFixtureSetUp]
         public void TestClassFixture()
         {
-            Console.WriteLine("Unique Run ID is: " +_runId);
+            Console.WriteLine("Unique Run ID is: " + _runId);
             //We can have in this section code performing actions like 
             //Read configuration settings
             //Login into application
@@ -72,9 +72,9 @@ namespace Nunit_CShaprp_CheatSheet
         {
             //The reason provided in ignore attribute is optional
             //Ignore attribute is used for test cases in the following cases mostly:
-                //Test case is not completely developed
-                //Test case is put out of regression suite and is not supposed to run
-                //You dont want to run this test case, not even manually triggering it
+            //Test case is not completely developed
+            //Test case is put out of regression suite and is not supposed to run
+            //You dont want to run this test case, not even manually triggering it
 
             //Providing ignoring reason for the test is a good practice
         }
@@ -86,7 +86,7 @@ namespace Nunit_CShaprp_CheatSheet
             //Some test cases might lock resources or you might have observed it leading to blocking execution of other tests
             //These are the tests which you do not want to run in bulk runs
             //These belong to group of test generally known as 'ExecuteLast' or 'RunLast'
-            
+
             //To run a explicit attribute test, you must run is specifically selected manually via Nunit console
 
             //Providing reason for why the test is be run in 'Explicit' mode is good practice
@@ -95,8 +95,8 @@ namespace Nunit_CShaprp_CheatSheet
         [Test, Timeout(25000)]
         public void Timeout_Test()
         {
-           //Timeout value provided in milliseconds defines the maximum time allowed for execution
-           //If used on TestFixture, it will be set for each contained Test's   
+            //Timeout value provided in milliseconds defines the maximum time allowed for execution
+            //If used on TestFixture, it will be set for each contained Test's   
 
             //Sometime you come across test which run into infinite loop or taking long execution time and blockin the regression runs
             //NOTE: The test case execution will be stopped when Timeout attribute is used
@@ -152,12 +152,23 @@ namespace Nunit_CShaprp_CheatSheet
             //Refer CustomPropertyAttributeTest for generating custom attributes matching your project requirements
         }
 
-        [Test, Property("Severity", "2"), Property("Severity", "3")]
+        [Test, Property("Severity", "2")]
         public void PropertyAttributeTest_Severity()
         {
             //Another example for understanding property attribute
         }
-        #endregion    
+
+        /// <summary>
+        /// ExpectedException defines what exception and how it is configured
+        /// </summary>
+        [Test, ExpectedException(typeof(Exception), ExpectedMessage = "Testing", MatchType = MessageMatch.Contains)]
+        public void ExpectedExceptionAttributeTest()
+        {
+            // MessageMatch is an enum of: Contains, Exact, Regex, StartsWith
+            throw new Exception("Testing Expected Exception");
+        }
+
+        #endregion
 
         #region TearDown Methods
 
@@ -186,7 +197,7 @@ namespace Nunit_CShaprp_CheatSheet
             //Free up resources occupied
         }
         #endregion
-       
+
     }
 }
 
