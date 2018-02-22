@@ -50,7 +50,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestSuites.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Testdata\Testdata.xml" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(ProjectDir)Testdata\*.xml" "$(TargetDir)"</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
