@@ -3,13 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nunit_CShaprp_CheatSheet", "Nunit_CShaprp_CheatSheet\Nunit_CShaprp_CheatSheet.csproj", "{9F67E8C3-367A-4695-A898-04C3975D5CE2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{A3E11BD7-73B0-45B6-BEB3-8A574FDD545E}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NunitVersion2", "NunitVersion2", "{9537707D-4063-4E20-890B-508B622EAE99}"
-	ProjectSection(SolutionItems) = preProject
-		Libraries\NunitVersion2\nunit.framework.dll = Libraries\NunitVersion2\nunit.framework.dll
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,8 +16,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{9537707D-4063-4E20-890B-508B622EAE99} = {A3E11BD7-73B0-45B6-BEB3-8A574FDD545E}
 	EndGlobalSection
 EndGlobal
