@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="CustomPropertyTests.cs" />
     <Compile Include="DataDrivenTests.cs" />
+    <Compile Include="OrderedTests.cs" />
     <Compile Include="TestSuites.cs" />
     <Compile Include="SimpleTestCases.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
