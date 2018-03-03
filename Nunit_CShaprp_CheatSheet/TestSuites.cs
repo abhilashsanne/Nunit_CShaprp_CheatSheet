@@ -57,7 +57,7 @@ namespace Nunit_CShaprp_CheatSheet
         { }
     }
 
-    [TestFixture(typeof(int))] //generic test fixture
-    [TestFixture(typeof(List<int>))]
+    //[TestFixture(typeof(int))] //generic test fixture
+    //[TestFixture(typeof(List<int>))]
     
 }
