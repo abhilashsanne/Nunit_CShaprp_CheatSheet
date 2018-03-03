@@ -3,6 +3,8 @@ This Project aims to provide a quick working code reference guide C# Nunit Autom
 
 It has collection of most important attributes and assertions in Nunit along with comments on usage and best practices.
 
+Bonus: A custom attribute to organize your tests cases in groups and run them in sequence or desired order without using any config files.
+
 Hope it saves you the trouble of having to browse through various links in Google or go through the whole Nunit documentation.
 
 Prerequisites:
